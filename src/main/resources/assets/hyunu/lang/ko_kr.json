@@ -1,0 +1,15 @@
+{
+  "item.hyunu.cookie": "혀누쿠키",
+  "item.hyunu.raw_star": "별의원석",
+  "item.hyunu.mui_burger": "경무이버거",
+  "item.hyunu.cucumber_dog": "오이핫도그",
+
+  "itemgroup.christmas": "혀누와 얼간이들 겨울 이벤트 아이템",
+
+  "item.tooltip.cookie": "먹으면 배고픔이 5 차오릅니다.",
+  "item.tooltip.raw_star": "별의 원석",
+  "item.tooltip.mui_burger": "먹으면 5 분간 포화 효과가 부여됩니다.",
+  "item.tooltip.cucumber_dog": "먹으면 배고픔이 차오르는 대신 멀미가 걸립니다.",
+
+  "block.hyunu.minjun_block": "서민준 블럭"
+}

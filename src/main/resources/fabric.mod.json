@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "hyunu",
+	"version": "${version}",
+	"name": "Hyunu",
+	"description": "Hyunu is handsome.",
+	"authors": [
+		"Hyunu"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/hyunu/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.hyunu.christmas.Hyunu"
+		],
+		"client": [
+			"net.hyunu.christmas.HyunuClient"
+		],
+		"fabric-datagen": [
+			"net.hyunu.christmas.HyunuDataGenerator"
+		]
+	},
+	"mixins": [
+		"hyunu.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
