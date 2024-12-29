@@ -1,14 +1,20 @@
 package net.hyunu.christmas.client;
 
+import net.minecraft.client.font.TextRenderer;
+
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.hyunu.christmas.Hyunu;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
+import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.PlayerEntityRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 
 public class ThirstHudOverlay implements HudRenderCallback {
 
@@ -51,6 +57,17 @@ public class ThirstHudOverlay implements HudRenderCallback {
 
             // 텍스처를 좌측 상단(0, 0) 위치에 그리기
 
+            // 플레이어 스킨 텍스처 가져오기
+            AbstractClientPlayerEntity player = (AbstractClientPlayerEntity) client.player;
+            EntityRenderDispatcher renderDispatcher = client.getEntityRenderDispatcher();
+            PlayerEntityRenderer playerRenderer = (PlayerEntityRenderer) renderDispatcher.getRenderer(player);
+            Identifier skin = playerRenderer.getTexture(player);
+
+            // 머리 부분 추출 및 HUD에 렌더링
+            drawContext.getMatrices().push();
+            drawContext.getMatrices().scale(scaleFactorX, scaleFactorY, 3.0f);
+            drawContext.drawTexture(skin, 10, 10, 8, 8, 8, 8, 64, 64); // (텍스처, x, y, 텍스처 x, 텍스처 y, 너비, 높이, 텍스처 전체 너비, 텍스처 전체 높이)
+            drawContext.getMatrices().pop();
         }
     }
 }
