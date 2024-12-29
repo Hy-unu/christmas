@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+//샌즈
 public class ModItemGroups {
     public static final ItemGroup CHRISTMAS_GROUP = Registry.register(Registries.ITEM_GROUP, new Identifier(Hyunu.MOD_ID,"christmas"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.christmas"))
