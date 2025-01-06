@@ -3,6 +3,7 @@
 	"package": "net.hyunu.christmas.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
+		"ModEntityDataSaverMixin",
 		"ExampleMixin"
 	],
 	"injectors": {
